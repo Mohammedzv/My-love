@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:'Cairo', sans-serif;
+}
+
+body{
+  background: linear-gradient(135deg,#ff4d6d,#ff758f,#ff8fa3);
+  min-height:100vh;
+  overflow:hidden;
+  color:white;
+}
+
+.hero,
+.message-page{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+  padding:20px;
+}
+
+.glass,
+.message-box{
+  width:100%;
+  max-width:420px;
+  background:rgba(255,255,255,0.15);
+  border:1px solid rgba(255,255,255,0.2);
+  backdrop-filter:blur(15px);
+  border-radius:30px;
+  padding:35px 25px;
+  text-align:center;
+  box-shadow:0 10px 40px rgba(0,0,0,0.25);
+  animation:fadeIn 1.5s ease;
+}
+
+h1{
+  font-size:32px;
+  margin-bottom:20px;
+}
+
+p{
+  font-size:18px;
+  line-height:2;
+}
+
+.emoji-row,
+.emoji-big{
+  margin-top:25px;
+  font-size:32px;
+  animation:pulse 2s infinite;
+}
+
+.love-btn{
+  display:inline-block;
+  margin-top:30px;
+  padding:14px 28px;
+  border-radius:50px;
+  text-decoration:none;
+  background:white;
+  color:#ff3366;
+  font-size:18px;
+  font-weight:bold;
+  transition:0.4s;
+  box-shadow:0 5px 20px rgba(255,255,255,0.3);
+}
+
+.love-btn:hover{
+  transform:scale(1.08);
+  background:#ffe5ec;
+}
+
+.hearts{
+  position:fixed;
+  width:100%;
+  height:100%;
+  overflow:hidden;
+  top:0;
+  left:0;
+  z-index:-1;
+}
+
+.heart{
+  position:absolute;
+  color:white;
+  animation:float 8s linear infinite;
+  opacity:0.7;
+}
+
+@keyframes float{
+  0%{
+    transform:translateY(100vh) scale(0);
+  }
+  100%{
+    transform:translateY(-10vh) scale(1.5);
+  }
+}
+
+@keyframes pulse{
+  0%{
+    transform:scale(1);
+  }
+  50%{
+    transform:scale(1.1);
+  }
+  100%{
+    transform:scale(1);
+  }
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(30px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+@media(max-width:500px){
+
+  h1{
+    font-size:26px;
+  }
+
+  p{
+    font-size:16px;
+  }
+
+  .emoji-row,
+  .emoji-big{
+    font-size:26px;
+  }
+
+  .love-btn{
+    width:100%;
+  }
+}
